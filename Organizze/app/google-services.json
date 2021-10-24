@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "378479110247",
+    "project_id": "organizze-c9ea4",
+    "storage_bucket": "organizze-c9ea4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:378479110247:android:cdae1e73df1137cb4f0cc2",
+        "android_client_info": {
+          "package_name": "com.montfel.organizze"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "378479110247-k472mke4k50blgnr49mlfrmdsagbsa9u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.montfel.organizze",
+            "certificate_hash": "9ca9e77af5ceeca8c104dd0ba5d3d8610698ab7a"
+          }
+        },
+        {
+          "client_id": "378479110247-lprt44r5bii0i30jcqiiiqlifi24ndfp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAio6GVyhBVof33KBDWEUOsRxsdUEi1Hg8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "378479110247-lprt44r5bii0i30jcqiiiqlifi24ndfp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
