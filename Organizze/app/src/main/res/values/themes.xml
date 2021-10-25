@@ -18,18 +18,28 @@
     <style name="despesaTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+
         <item name="colorPrimary">@color/colorPrimaryDespesa</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryDarkDespesa</item>
+        <item name="colorOnPrimary">@color/white</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDarkDespesa</item>
-        <item name="colorAccent">@color/colorAccentDespesa</item>
-        <item name="colorPrimaryVariant">@color/colorAccentDespesa</item>
+
+        <item name="colorSecondary">@color/colorAccentDespesa</item>
+        <item name="colorOnSecondary">@color/white</item>
     </style>
 
     <style name="receitaTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+
         <item name="colorPrimary">@color/colorPrimaryReceita</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryDarkReceita</item>
+        <item name="colorOnPrimary">@color/white</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDarkReceita</item>
-        <item name="colorAccent">@color/colorAccentReceita</item>
+
+        <item name="colorSecondary">@color/colorAccentReceita</item>
+        <item name="colorSecondaryVariant">@color/colorPrimaryReceita</item>
+        <item name="colorOnSecondary">@color/white</item>
     </style>
 
     <style name="Theme.Organizze.NoActionBar">
