@@ -56,9 +56,7 @@ public class CadastroActivity extends AppCompatActivity {
         auth.createUserWithEmailAndPassword(usuario.getEmail(), usuario.getSenha())
                 .addOnCompleteListener(this, task -> {
                     if (task.isSuccessful()) {
-                        Toast.makeText(CadastroActivity.this,
-                                "Sucesso ao cadastrar usuário!",
-                                Toast.LENGTH_SHORT).show();
+                        finish();
                     } else {
 
                         String excecao = "";

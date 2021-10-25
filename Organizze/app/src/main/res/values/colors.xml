@@ -9,4 +9,12 @@
     <color name="white">#FFFFFFFF</color>
     <color name="cor">#01c7d2</color>
     <color name="accent">#FF706A</color>
+
+    <color name="colorPrimaryDespesa">#FF706A</color>
+    <color name="colorPrimaryDarkDespesa">#E66560</color>
+    <color name="colorAccentDespesa">#FF706A</color>
+
+    <color name="colorPrimaryReceita">#00D39E</color>
+    <color name="colorPrimaryDarkReceita">#00BE8B</color>
+    <color name="colorAccentReceita">#00D39E</color>
 </resources>

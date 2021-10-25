@@ -8,27 +8,22 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.heinrichreimersoftware.materialintro.app.IntroActivity;
 import com.heinrichreimersoftware.materialintro.slide.FragmentSlide;
 import com.heinrichreimersoftware.materialintro.slide.SimpleSlide;
 import com.montfel.organizze.R;
 import com.montfel.organizze.activity.CadastroActivity;
 import com.montfel.organizze.activity.LoginActivity;
+import com.montfel.organizze.config.ConfiguracaoFirebase;
 
 public class MainActivity extends IntroActivity {
 
-//    private Button btnCadastrar;
-//    private TextView tvTemConta;
+    private FirebaseAuth auth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_main);
-
-//        btnCadastrar = findViewById(R.id.btnCadastrar);
-//        tvTemConta = findViewById(R.id.tvTemConta);
-
-
 
         setButtonBackVisible(false);
         setButtonNextVisible(false);
@@ -64,13 +59,12 @@ public class MainActivity extends IntroActivity {
                 .build()
 
         );
-//        btnCadastrar.setOnClickListener(view -> {
-//            startActivity(new Intent(this, CadastroActivity.class));
-//        });
-//
-//        tvTemConta.setOnClickListener(view -> {
-//            startActivity(new Intent(this, LoginActivity.class));
-//        });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        verificarUsuarioLogado();
     }
 
     public void entrar (View view) {
@@ -79,5 +73,17 @@ public class MainActivity extends IntroActivity {
 
     public void cadastrar (View view) {
         startActivity(new Intent(this, CadastroActivity.class));
+    }
+
+    public void verificarUsuarioLogado() {
+        auth = ConfiguracaoFirebase.getFirebaseAuth();
+//        auth.signOut();
+        if (auth.getCurrentUser() != null) {
+            abrirTelaPrincipal();
+        }
+    }
+
+    public void abrirTelaPrincipal() {
+        startActivity(new Intent(this, PrincipalActivity.class));
     }
 }
