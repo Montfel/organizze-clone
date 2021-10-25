@@ -13,6 +13,7 @@ import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
 import com.montfel.organizze.R;
 import com.montfel.organizze.config.ConfiguracaoFirebase;
+import com.montfel.organizze.helper.Base64Custom;
 import com.montfel.organizze.model.Usuario;
 
 public class CadastroActivity extends AppCompatActivity {
@@ -56,9 +57,11 @@ public class CadastroActivity extends AppCompatActivity {
         auth.createUserWithEmailAndPassword(usuario.getEmail(), usuario.getSenha())
                 .addOnCompleteListener(this, task -> {
                     if (task.isSuccessful()) {
+                        String idUsuario = Base64Custom.codificarBase64(usuario.getEmail());
+                        usuario.setIdUsuario(idUsuario);
+                        usuario.salvar();
                         finish();
                     } else {
-
                         String excecao = "";
                         try {
                             throw task.getException();
