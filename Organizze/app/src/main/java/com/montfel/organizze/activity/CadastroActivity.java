@@ -47,12 +47,12 @@ public class CadastroActivity extends AppCompatActivity {
                 usuario.setNome(nome);
                 usuario.setEmail(email);
                 usuario.setSenha(senha);
-                cadastrarUsuario();
+                cadastraUsuario();
             }
         });
     }
 
-    public void cadastrarUsuario() {
+    public void cadastraUsuario() {
         auth = ConfiguracaoFirebase.getFirebaseAuth();
         auth.createUserWithEmailAndPassword(usuario.getEmail(), usuario.getSenha())
                 .addOnCompleteListener(this, task -> {

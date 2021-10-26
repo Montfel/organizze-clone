@@ -7,10 +7,10 @@ import android.widget.EditText;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-public class Data {
+public class DateCustom {
     private DatePickerDialog datePickerDialog;
 
-    public Data(EditText editText) {
+    public DateCustom(EditText editText) {
         editText.setText(getTodaysDate());
         initDatePicker(editText);
     }
@@ -37,5 +37,10 @@ public class Data {
     @SuppressLint("DefaultLocale")
     private String makeDateString(int dayOfMonth, int month, int year) {
         return String.format("%02d", dayOfMonth) + "/" + String.format("%02d", month) + "/" + year;
+    }
+
+    public static String mesAnoDataEscolhida(String data) {
+        String[] dataQuebrada = data.split("/");
+        return dataQuebrada[1] + dataQuebrada[2];
     }
 }
