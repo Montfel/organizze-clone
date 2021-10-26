@@ -59,6 +59,7 @@ public class DespesasActivity extends AppCompatActivity {
                 atualizaDespesa(despesaTotal + Double.parseDouble(editValorDespesa.getText().toString()));
 
                 movimentacao.salvar();
+                finish();
             }
         });
     }

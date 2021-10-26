@@ -59,6 +59,7 @@ public class ReceitasActivity extends AppCompatActivity {
                 atualizaReceita(receitaTotal + Double.parseDouble(editValorReceita.getText().toString()));
 
                 movimentacao.salvar();
+                finish();
             }
         });
     }

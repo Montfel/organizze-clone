@@ -8,10 +8,20 @@ import com.montfel.organizze.helper.DateCustom;
 
 public class Movimentacao {
 
-    private String data, categoria, descricao, tipo;
+    private String data, categoria, descricao, tipo, key;
     private double valor;
 
     public Movimentacao() {
+    }
+
+    public void salvar() {
+        FirebaseAuth auth = ConfiguracaoFirebase.getFirebaseAuth();
+        DatabaseReference firebase = ConfiguracaoFirebase.getFirebaseDatabase();
+        firebase.child("movimentacao")
+                .child(Base64Custom.codificarBase64(auth.getCurrentUser().getEmail()))
+                .child(DateCustom.mesAnoDataEscolhida(this.data))
+                .push()
+                .setValue(this);
     }
 
     public String getData() {
@@ -54,13 +64,11 @@ public class Movimentacao {
         this.valor = valor;
     }
 
-    public void salvar() {
-        FirebaseAuth auth = ConfiguracaoFirebase.getFirebaseAuth();
-        DatabaseReference firebase = ConfiguracaoFirebase.getFirebaseDatabase();
-        firebase.child("movimentacao")
-                .child(Base64Custom.codificarBase64(auth.getCurrentUser().getEmail()))
-                .child(DateCustom.mesAnoDataEscolhida(this.data))
-                .push()
-                .setValue(this);
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
     }
 }
